@@ -10,13 +10,13 @@ const routeMails = require('./routes/routeMails.js');
 const corsOptions = {
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Origin', 'X-Requested-With', 'Content', 'Accept', 'Content-Type', 'Authorization'],
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content', 'Accept', 'Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
 app.use(express.json());
 
 // Utiliser les routes
-app.use('/api/mails', routeMails);
+app.use('/functions/mails', routeMails);
 
 const PORT = process.env.PORT || 6284; // Utiliser la variable d'environnement PORT si disponible
 
