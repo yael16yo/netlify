@@ -1,15 +1,15 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const nodemailer = require('nodemailer')
-const router = express.Router()
+const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const router = express.Router();
 
 router.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'yael.brinkert@gmail.com',
-        pass: 'marhbnaxnjywzfbg'
+        user: process.env.EMAIL_USER, // Utilisation des variables d'environnement
+        pass: process.env.EMAIL_PASS,
     }
 });
 
@@ -17,11 +17,11 @@ router.post('/sendemail', (req, res) => {
     const { name, from, subject, text } = req.body;
 
     const mailOptions = {
-        from: 'yael.brinkert@gmail.com', // L'adresse "from" doit être celle de l'email authentifié
-        replyTo: from, // L'adresse de l'utilisateur est définie comme "reply-to"
-        to: 'yael.brinkert@gmail.com',
+        from: process.env.EMAIL_USER, // Utilisation des variables d'environnement
+        replyTo: from,
+        to: process.env.EMAIL_USER,
         subject: subject,
-        html: 'Message provenant de : ' + name + `<br/><br/>` + text
+        html: 'Message provenant de : ' + name + `<br/><br/>` + text,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -34,6 +34,5 @@ router.post('/sendemail', (req, res) => {
         }
     });
 });
-
 
 module.exports = router;
