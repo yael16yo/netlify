@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+exports.StoryTemplate = void 0;
+var tslib_1 = require("tslib");
+var react_1 = tslib_1.__importDefault(require("react"));
+var formik_1 = require("formik");
+function StoryTemplate(_a) {
+    var children = _a.children, rest = tslib_1.__rest(_a, ["children"]);
+    return (react_1["default"].createElement(formik_1.Formik, tslib_1.__assign({}, rest, { onSubmit: function (values, formikHelpers) {
+            console.log('submit', { values: values });
+            formikHelpers.setSubmitting(false);
+        } }), function (f) { return (react_1["default"].createElement(formik_1.Form, null,
+        react_1["default"].createElement("div", { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 } },
+            children,
+            react_1["default"].createElement("pre", null, JSON.stringify(tslib_1.__assign({}, f), null, 4))))); }));
+}
+exports.StoryTemplate = StoryTemplate;
+//# sourceMappingURL=shared.js.map

@@ -1,0 +1,49 @@
+"use strict";
+exports.__esModule = true;
+exports.Default = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = tslib_1.__importDefault(require("./"));
+exports["default"] = {
+    title: 'TreeSelect',
+    component: _1["default"]
+};
+var Default = function () { return (React.createElement(shared_1.StoryTemplate, { initialValues: { value: [] } },
+    React.createElement("div", null,
+        React.createElement(_1["default"], { style: { width: 300 }, name: 'value', treeData: [
+                {
+                    value: 'parent 1',
+                    title: 'foo',
+                    // ts complains if label is not defined here. Not sure why this is needed
+                    label: 'parent 1',
+                    children: [
+                        {
+                            value: 'parent 1-0',
+                            title: 'parent 1-0',
+                            children: [
+                                {
+                                    value: 'leaf1',
+                                    title: 'leaf1'
+                                },
+                                {
+                                    value: 'leaf2',
+                                    title: 'leaf2'
+                                },
+                            ]
+                        },
+                        {
+                            value: 'parent 1-1',
+                            title: 'parent 1-1',
+                            children: [
+                                {
+                                    value: 'leaf3',
+                                    title: React.createElement("b", { style: { color: '#08c' } }, "leaf3")
+                                },
+                            ]
+                        },
+                    ]
+                },
+            ] })))); };
+exports.Default = Default;
+//# sourceMappingURL=index.stories.js.map

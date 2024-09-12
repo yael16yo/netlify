@@ -1,0 +1,23 @@
+"use strict";
+exports.__esModule = true;
+exports.Default = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = tslib_1.__importDefault(require("./"));
+exports["default"] = {
+    title: 'DatePicker',
+    component: _1["default"]
+};
+var Template = function (args, _a) {
+    var argTypes = _a.argTypes;
+    return (React.createElement(shared_1.StoryTemplate, { initialValues: {
+            value: null,
+            range: []
+        } },
+        React.createElement("div", null,
+            React.createElement(_1["default"], { name: 'value' }),
+            React.createElement(_1["default"].RangePicker, { name: 'range' }))));
+};
+exports.Default = Template.bind({});
+//# sourceMappingURL=index.stories.js.map

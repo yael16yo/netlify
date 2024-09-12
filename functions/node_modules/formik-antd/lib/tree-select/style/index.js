@@ -1,0 +1,4 @@
+"use strict";
+exports.__esModule = true;
+require("antd/es/tree-select/style");
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,20 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yael",
+  "license": "ISC",
+  "description": "1st version Back",
+  "dependencies": {
+    "antd": "^5.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "formik": "^2.4.6",
+    "formik-antd": "^3.0.0-beta.11",
+    "mongoose": "^8.5.3",
+    "nodemailer": "^6.9.14"
+  }
+}

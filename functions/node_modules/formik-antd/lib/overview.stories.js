@@ -1,0 +1,151 @@
+"use strict";
+exports.__esModule = true;
+exports.Overview = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var _1 = require(".");
+var formik_1 = require("formik");
+var dayjs_1 = tslib_1.__importDefault(require("dayjs"));
+var tree_select_1 = require("antd/es/tree-select");
+var antd_1 = require("antd");
+exports["default"] = {
+    title: 'Overview',
+    component: 'div'
+};
+function Overview() {
+    return (React.createElement(formik_1.Formik, { initialValues: {
+            userName: '',
+            //set default/initial values via formik
+            email: 'sample@email.com',
+            address: { city: '' },
+            password: '',
+            index: 5,
+            dollars: 1,
+            newsletter: true,
+            consent: false,
+            description: '',
+            time: (0, dayjs_1["default"])().toISOString(),
+            date: (0, dayjs_1["default"])().toISOString(),
+            city: 3,
+            radioGroup: '1',
+            todos: ['2', '3'],
+            slider1: 30,
+            slider2: [20, 60]
+        }, onSubmit: function (values) {
+            alert(JSON.stringify(values));
+        }, validate: function (values) {
+            if (!values.userName) {
+                return { userName: 'required' };
+            }
+            return undefined;
+        }, render: function (formik) { return (React.createElement(_1.Form, null,
+            React.createElement("div", { style: {
+                    display: 'flex',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    maxWidth: '850px',
+                    gridTemplateColumns: '1fr 1fr'
+                } },
+                React.createElement("div", { style: {
+                        margin: '5px',
+                        height: '100%',
+                        display: 'grid',
+                        gridGap: '5px'
+                    } },
+                    React.createElement(_1.Input, { name: 'email', placeholder: 'Basic Input' }),
+                    React.createElement(_1.Form.Item, { name: 'userName', hasFeedback: true, showValidateSuccess: true, __debug: true },
+                        React.createElement(_1.Input, { name: 'userName', placeholder: 'Validated input' })),
+                    React.createElement(_1.Input, { addonBefore: 'city', name: 'address.city', placeholder: 'Input (nested object)' }),
+                    React.createElement(_1.Input.Password, { name: 'password', placeholder: 'Input.Password' }),
+                    React.createElement(_1.Input.TextArea, { name: 'description', placeholder: 'Input.TextArea' }),
+                    React.createElement(_1.InputNumber, { name: 'index', min: 0 }),
+                    React.createElement(_1.InputNumber, { name: 'dollars', formatter: function (value) { return "$ ".concat(value); } }),
+                    React.createElement(_1.AutoComplete, { name: 'auto', placeholder: 'Autocomplete', dataSource: ['Berlin', 'Amsterdam', 'Paris'], showArrow: true }),
+                    React.createElement(_1.Mentions, { name: 'mentions', placeholder: 'Mentions' },
+                        React.createElement(_1.Mentions.Option, { value: 'afc163' }, "afc163"),
+                        React.createElement(_1.Mentions.Option, { value: 'zombieJ' }, "zombieJ"),
+                        React.createElement(_1.Mentions.Option, { value: 'yesmeck' }, "yesmeck")),
+                    React.createElement(_1.Rate, { name: 'rate', allowHalf: true, allowClear: true }),
+                    React.createElement(_1.Rate, { name: 'rate', allowHalf: true, style: { color: 'red' }, allowClear: true }),
+                    React.createElement(_1.Slider, { name: 'slider1' }),
+                    React.createElement(_1.Slider, { name: 'slider2', range: true }),
+                    React.createElement(_1.Checkbox, { name: 'newsletter' }, "Checkbox"),
+                    React.createElement("div", null,
+                        React.createElement(_1.Switch, { name: 'consent', checkedChildren: '\u5F00', unCheckedChildren: '\u5173' })),
+                    React.createElement(_1.TimePicker, { name: 'time', placeholder: 'TimePicker' }),
+                    React.createElement(_1.DatePicker, { name: 'date', showTime: true, placeholder: 'DatePicker' }),
+                    React.createElement(_1.Radio.Group, { name: 'radioGroup', options: [
+                            { label: 'item 1', value: '1' },
+                            { label: 'item 2', value: 2 },
+                            { label: 'item 3', value: '3' },
+                            { label: React.createElement("span", null, "foo"), value: '4' },
+                        ] }),
+                    React.createElement(_1.Radio.Group, { name: 'city', size: 'large' },
+                        React.createElement(_1.Radio.Button, { value: 1 }, "Hamburg"),
+                        React.createElement(_1.Radio.Button, { value: 2 }, "Amsterdam"),
+                        React.createElement(_1.Radio.Button, { value: 3 }, "London")),
+                    React.createElement(_1.Checkbox.Group, { name: 'todos', options: [
+                            { label: 'item 1', value: '1' },
+                            { label: 'item 2', value: '2' },
+                            { label: 'item 3', value: '3' },
+                        ] }),
+                    React.createElement(_1.Select, { name: 'select2', style: { width: '100%' }, placeholder: 'Select multiple', mode: 'multiple' },
+                        React.createElement(_1.Select.Option, { value: 1 }, "item 1"),
+                        React.createElement(_1.Select.Option, { value: 2 }, "item 2"),
+                        React.createElement(_1.Select.Option, { value: 3 }, "item 3")),
+                    React.createElement(_1.Select, { name: 'select3', style: { width: '100%' }, placeholder: 'Select with groups' },
+                        React.createElement(_1.Select.OptGroup, { label: 'group 1' },
+                            React.createElement(_1.Select.Option, { value: 1 }, "item 1"),
+                            React.createElement(_1.Select.Option, { value: 2 }, "item 2"),
+                            React.createElement(_1.Select.Option, { value: 3 }, "item 3")),
+                        React.createElement(_1.Select.OptGroup, { label: 'group 2' },
+                            React.createElement(_1.Select.Option, { value: 4 }, "item 4"),
+                            React.createElement(_1.Select.Option, { value: 5 }, "item 5"),
+                            React.createElement(_1.Select.Option, { value: 6 }, "item 6"))),
+                    React.createElement(_1.Cascader, { options: [
+                            {
+                                value: 'zhejiang',
+                                label: 'Zhejiang',
+                                children: [
+                                    {
+                                        value: 'hangzhou',
+                                        label: 'Hangzhou',
+                                        children: [
+                                            {
+                                                value: 'xihu',
+                                                label: 'West Lake'
+                                            },
+                                        ]
+                                    },
+                                ]
+                            },
+                            {
+                                value: 'jiangsu',
+                                label: 'Jiangsu',
+                                children: [
+                                    {
+                                        value: 'nanjing',
+                                        label: 'Nanjing'
+                                    },
+                                ]
+                            },
+                        ], name: 'cascader', placeholder: 'Cascader' }),
+                    React.createElement(_1.TreeSelect, { name: 'treeselect', placeholder: 'Treeselect' },
+                        React.createElement(tree_select_1.TreeNode, { value: 'parent 1', title: 'parent 1', key: '0-1' },
+                            React.createElement(tree_select_1.TreeNode, { value: 'parent 1-0', title: 'parent 1-0', key: '0-1-1' },
+                                React.createElement(tree_select_1.TreeNode, { value: 'leaf1', title: 'my leaf', key: 'random' }),
+                                React.createElement(tree_select_1.TreeNode, { value: 'leaf2', title: 'your leaf', key: 'random1' })),
+                            React.createElement(tree_select_1.TreeNode, { value: 'parent 1-1', title: 'parent 1-1', key: 'random2' },
+                                React.createElement(tree_select_1.TreeNode, { value: 'sss', title: React.createElement("b", { style: { color: '#08c' } }, "sss"), key: 'random3' })))),
+                    React.createElement(_1.Transfer, { name: 'transfer', dataSource: [
+                            { key: '1', title: 'item 1' },
+                            { key: '2', title: 'item 2' },
+                            { key: '3', title: 'item 3' },
+                        ], render: function (item) { return item.title; } }),
+                    React.createElement(antd_1.Button.Group, { size: 'large' },
+                        React.createElement(_1.ResetButton, null, "Reset"),
+                        React.createElement(_1.SubmitButton, { type: 'primary', disabled: false }, "Submit")))),
+            React.createElement(_1.FormikDebug, { style: { maxWidth: 400 } }))); } }));
+}
+exports.Overview = Overview;
+//# sourceMappingURL=overview.stories.js.map

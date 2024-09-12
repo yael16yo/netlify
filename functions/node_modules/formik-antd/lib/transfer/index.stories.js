@@ -1,0 +1,20 @@
+"use strict";
+exports.__esModule = true;
+exports.Default = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = tslib_1.__importDefault(require("./"));
+exports["default"] = {
+    title: 'Transfer',
+    component: _1["default"]
+};
+var Default = function () { return (React.createElement(shared_1.StoryTemplate, { initialValues: { value: [] } },
+    React.createElement("div", null,
+        React.createElement(_1["default"], { name: 'value', render: function (item) { return item.title; }, listStyle: function () { return ({}); }, dataSource: [
+                { key: '1', title: 'item 1' },
+                { key: '2', title: 'item 2' },
+                { key: '3', title: 'item 3' },
+            ] })))); };
+exports.Default = Default;
+//# sourceMappingURL=index.stories.js.map

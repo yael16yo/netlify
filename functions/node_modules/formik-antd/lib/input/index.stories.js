@@ -1,0 +1,50 @@
+"use strict";
+exports.__esModule = true;
+exports.WithFormItem = exports.WithNullAsDefault = exports.WithDefaultValue = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = require("./");
+var antd_1 = require("antd");
+var submit_button_1 = require("../submit-button");
+var form_item_1 = require("../form-item");
+exports["default"] = {
+    title: 'Input',
+    component: _1.Input
+};
+var Template = function (args, _a) {
+    var argTypes = _a.argTypes;
+    return (React.createElement(shared_1.StoryTemplate, { initialValues: { value: args.value } },
+        React.createElement("div", { style: { width: 500 } },
+            React.createElement(antd_1.Space, { direction: 'vertical' },
+                "Input",
+                React.createElement(_1.Input, { name: 'value', style: { width: 500 } }),
+                "Input.Password",
+                React.createElement(_1.Input.Password, { name: 'value', style: { width: 500 } }),
+                "Input.TextArea",
+                React.createElement(_1.Input.TextArea, { name: 'value', style: { width: 500 } })))));
+};
+var TemplateWithFormItem = function (args, _a) {
+    var argTypes = _a.argTypes;
+    return (React.createElement(shared_1.StoryTemplate, { initialValues: { value: args.value }, validate: function (values) {
+            return values.value === null || values.value === ''
+                ? { value: 'Field is required' }
+                : { value: 'Field is required' };
+        } },
+        React.createElement("div", { style: { width: 500 } },
+            React.createElement(antd_1.Space, { direction: 'vertical' },
+                React.createElement(form_item_1.FormItem, { name: 'value', label: 'Input' },
+                    React.createElement(_1.Input, { name: 'value', style: { width: 500 }, fast: true })),
+                React.createElement(antd_1.Form.Item, { name: 'value', label: 'Input.Password' },
+                    React.createElement(_1.Input.Password, { name: 'value', style: { width: 500 } })),
+                React.createElement(antd_1.Form.Item, { name: 'value', label: 'Input.TextArea' },
+                    React.createElement(_1.Input.TextArea, { name: 'value', style: { width: 500 } })),
+                React.createElement(submit_button_1.SubmitButton, null, "Submit")))));
+};
+exports.WithDefaultValue = Template.bind({});
+exports.WithDefaultValue.args = { value: 'foo' };
+exports.WithNullAsDefault = Template.bind({});
+exports.WithNullAsDefault.args = { value: null };
+exports.WithFormItem = TemplateWithFormItem.bind({});
+exports.WithNullAsDefault.args = { value: 'foo' };
+//# sourceMappingURL=index.stories.js.map

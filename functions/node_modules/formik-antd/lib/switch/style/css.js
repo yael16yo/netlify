@@ -1,0 +1,4 @@
+"use strict";
+exports.__esModule = true;
+require("antd/es/switch/style/css.js");
+//# sourceMappingURL=css.js.map

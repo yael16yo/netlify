@@ -1,0 +1,4 @@
+"use strict";
+exports.__esModule = true;
+require("antd/es/rate/style");
+//# sourceMappingURL=index.js.map

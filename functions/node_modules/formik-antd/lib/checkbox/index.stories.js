@@ -1,0 +1,29 @@
+"use strict";
+exports.__esModule = true;
+exports.Default = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = require("./");
+var form_1 = tslib_1.__importDefault(require("../form"));
+exports["default"] = {
+    title: 'Checkbox',
+    component: _1.Checkbox
+};
+var Template = function (args, _a) {
+    var argTypes = _a.argTypes;
+    return (React.createElement(shared_1.StoryTemplate, { initialValues: {
+            value: null,
+            defaultTrue: true,
+            defaultFalse: false,
+            group: []
+        } },
+        React.createElement("div", null,
+            React.createElement(_1.Checkbox, { name: 'value' }),
+            React.createElement(_1.Checkbox, { name: 'defaultTrue' }),
+            React.createElement(_1.Checkbox, { name: 'defaultFalse' }),
+            React.createElement(form_1["default"].Item, { name: 'defaultFalse', label: 'Checkbox' },
+                React.createElement(_1.Checkbox, { name: 'defaultFalse' })))));
+};
+exports.Default = Template.bind({});
+//# sourceMappingURL=index.stories.js.map

@@ -1,0 +1,19 @@
+"use strict";
+exports.__esModule = true;
+exports.Default = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = tslib_1.__importDefault(require("./"));
+exports["default"] = {
+    title: 'Cascader',
+    component: _1["default"]
+};
+var Template = function () {
+    return (React.createElement(React.Fragment, null,
+        React.createElement(shared_1.StoryTemplate, { initialValues: { value: null } },
+            React.createElement("div", { style: { width: 500 } },
+                React.createElement(_1["default"], { name: 'value', style: { width: 500 }, options: [{ label: 'item1', value: 'value1' }] })))));
+};
+exports.Default = Template.bind({});
+//# sourceMappingURL=index.stories.js.map

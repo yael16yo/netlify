@@ -1,0 +1,16 @@
+"use strict";
+exports.__esModule = true;
+exports.Default = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = tslib_1.__importDefault(require("./"));
+exports["default"] = {
+    title: 'TimePicker',
+    component: _1["default"]
+};
+var Default = function () { return (React.createElement(shared_1.StoryTemplate, { initialValues: { value: true } },
+    React.createElement("div", null,
+        React.createElement(_1["default"], { name: 'value' })))); };
+exports.Default = Default;
+//# sourceMappingURL=index.stories.js.map

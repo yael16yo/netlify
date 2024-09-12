@@ -1,0 +1,28 @@
+"use strict";
+exports.__esModule = true;
+exports.WithDefaultValue = void 0;
+var tslib_1 = require("tslib");
+var React = tslib_1.__importStar(require("react"));
+var shared_1 = require("../shared");
+var _1 = require("./");
+var input_1 = require("../input");
+var antd_1 = require("antd");
+exports["default"] = {
+    title: 'Form Item',
+    component: _1.FormItem
+};
+function PropRenderer(props) {
+    return React.createElement("div", null, JSON.stringify(props, null, 4));
+}
+var Template = function (args, _a) {
+    var argTypes = _a.argTypes;
+    return (React.createElement(shared_1.StoryTemplate, { initialValues: { value: 'hello' } },
+        React.createElement("div", { style: { width: 500 } },
+            React.createElement(antd_1.Space, { direction: 'vertical' },
+                React.createElement(_1.FormItem, { name: 'value', style: { width: 500 }, label: 'Input' },
+                    React.createElement(input_1.Input, { name: 'value' })),
+                React.createElement(_1.FormItem, { name: 'value', style: { width: 500 }, label: 'Render props' },
+                    React.createElement(PropRenderer, null))))));
+};
+exports.WithDefaultValue = Template.bind({});
+//# sourceMappingURL=index.stories.js.map

@@ -1,0 +1,4 @@
+"use strict";
+exports.__esModule = true;
+require("antd/es/checkbox/style");
+//# sourceMappingURL=index.js.map
