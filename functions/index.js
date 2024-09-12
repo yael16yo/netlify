@@ -16,7 +16,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Utiliser les routes
-app.use('/functions/mails', routeMails);
+app.use('/api/mails', routeMails);
 
 const PORT = process.env.PORT || 6284; // Utiliser la variable d'environnement PORT si disponible
 
