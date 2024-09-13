@@ -13,7 +13,6 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });
-app.use(express.json());
 
 // Utiliser les routes
 app.use('/api/mails', routeMails);
